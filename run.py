@@ -1,6 +1,6 @@
 from project.config import DevelopmentConfig
 from project.dao.models import Genre, User, Director, Movie
-from project.server import create_app, db
+from project.server.server import create_app, db
 
 app = create_app(DevelopmentConfig)
 
@@ -14,3 +14,7 @@ def shell():
         "Director": Director,
         "Movie": Movie,
     }
+
+
+if __name__ == '__main__':
+    app.run(port=8000)
